@@ -1,4 +1,4 @@
-package ginmiddlewares
+package xresponsetime
 
 import (
 	"strconv"
@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ResponseTimeHeader(c *gin.Context) {
+func Handler(c *gin.Context) {
 	startTime := time.Now()
 	c.Next()
 	duration := int(time.Since(startTime).Microseconds())
