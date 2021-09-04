@@ -8,7 +8,6 @@ import (
 )
 
 func Handler(c *gin.Context) {
-	// actual loginc
 	startTime := time.Now()
 	c.Next()
 	duration := int(time.Since(startTime).Microseconds())

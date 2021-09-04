@@ -16,7 +16,7 @@ func Ping(c *gin.Context) {
 func main() {
 	router := gin.New()
 
-	router.Use(xinject.Handler)
+	router.Use(xinject.Handler) // always add this at begining
 	router.Use(xresponsetime.Handler)
 	router.Use(xservername.Handler)
 
