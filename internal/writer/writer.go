@@ -1,4 +1,4 @@
-package ginmiddlewares
+package writer
 
 import (
 	"bytes"
