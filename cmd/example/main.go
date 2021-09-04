@@ -26,5 +26,5 @@ func main() {
 		Addr:    "localhost:8999",
 		Handler: router,
 	}
-	server.ListenAndServe()
+	_ = server.ListenAndServe()
 }
