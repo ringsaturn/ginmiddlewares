@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/ringsaturn/ginmiddlewares/xinject"
 	"github.com/ringsaturn/ginmiddlewares/xresponsetime"
 	"github.com/ringsaturn/ginmiddlewares/xservername"
 )
@@ -15,6 +16,7 @@ func Ping(c *gin.Context) {
 func main() {
 	router := gin.New()
 
+	router.Use(xinject.Handler)
 	router.Use(xresponsetime.Handler)
 	router.Use(xservername.Handler)
 
