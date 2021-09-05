@@ -1,4 +1,4 @@
-package xservername
+package xhostname
 
 import (
 	"os"
@@ -12,5 +12,5 @@ func Handler(c *gin.Context) {
 	if err != nil {
 		name = "unknown"
 	}
-	c.Header("x-server-name", name)
+	c.Header("x-host-name", name)
 }
