@@ -5,8 +5,9 @@ import (
 	"github.com/ringsaturn/ginmiddlewares/internal/writer"
 )
 
+// Handler is the ResponseWriter inject func, this will replace gin's
+// default writer, so we can change header after `c.Next()`
 func Handler(c *gin.Context) {
-	// Inject Writer
 	w := writer.NewResponseWriter(c)
 	c.Writer = w
 	defer w.Done(c)
