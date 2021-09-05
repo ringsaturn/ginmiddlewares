@@ -22,12 +22,8 @@ func New(reader *geoip2.Reader) gin.HandlerFunc {
 			ip, _ = c.RemoteIP()
 		}
 
-		city, err := reader.City(ip)
-		if err != nil {
-			c.Set("x-geoip-city", nil)
-		} else {
-			c.Set("x-geoip-city", city)
-		}
+		city, _ := reader.City(ip)
+		c.Set("x-geoip-city", city)
 		c.Next()
 	}
 }
